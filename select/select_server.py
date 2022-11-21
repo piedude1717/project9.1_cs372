@@ -19,15 +19,6 @@ def run_server(port):
     print('(\'127.0.0.1\', ' + str(port) + '): connected')
     print(s)
 
-    ready_set = {s}
-    print("hi0")
-    ready_to_read, _, _ = select.select(ready_set, {}, {})
-    print('hi1')
-    for s in ready_to_read:
-        if s.
-        data = s.recv(port)
-        print("this is data" + str(data))
-
 
     while True:
         response = client.recv(port).decode()
