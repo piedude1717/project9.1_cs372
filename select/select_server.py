@@ -17,13 +17,12 @@ def run_server(port):
     s.listen()
     client, addr = s.accept()
     print('(\'127.0.0.1\', ' + str(port) + '): connected')
-    print(s)
 
 
     while True:
         response = client.recv(port).decode()
 
-        print(len(response))
+
 
         if len(response) <= 0:
             client.close()
@@ -31,7 +30,10 @@ def run_server(port):
             print("hi")
             break
 
-        print(response)
+        response = response.split(':')
+        response = response[1]
+        sent_data = '(\'127.0.0.1\', ' + str(port) + ') ' + str(len(response)) + 'bytes: b\'test1:' + response
+        print(sent_data)
 
 
 
