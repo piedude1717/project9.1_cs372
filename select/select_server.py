@@ -24,6 +24,7 @@ def run_server(port):
     ready_to_read, _, _ = select.select(ready_set, {}, {})
     print('hi1')
     for s in ready_to_read:
+        if s.
         data = s.recv(port)
         print("this is data" + str(data))
 
